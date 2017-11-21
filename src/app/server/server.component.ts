@@ -7,6 +7,9 @@ import {Component} from '@angular/core';
     h4 {
       color: rgb(154, 15, 203);
     }
+    .online {
+      color: #fff;
+    }
   `]
 })
 export class ServerComponent {
