@@ -21,7 +21,8 @@ import { Component, OnInit } from '@angular/core';
     <p [innerText]="allowNewServer"></p>
     <app-server></app-server>
     <app-server></app-server>
-    <app-server></app-server>`,
+    <app-server></app-server>
+    <p *ngIf="serverCreated">Server Creation Completed</p>`,
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
@@ -29,6 +30,7 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = "No server was created yet!";
   serverName = "";
+  serverCreated = false;
 
   constructor() {
     setTimeout(() => {
@@ -41,6 +43,7 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreationStatus = "Server was Created! Name: "+ this.serverName;
+    this.serverCreated = true;
   }
 
   onUptadteServerName(event: Event) {
